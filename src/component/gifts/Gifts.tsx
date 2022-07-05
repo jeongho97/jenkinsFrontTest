@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { IMG_PATH } from "../../app/AxiosApi";
-import { load2, load3,updateView } from "../../app/gifts";
+import { getGift, getReceivers ,updateView } from "../../app/gifts";
 import { requestGetGiftName, requestSort } from "../../app/gifts";
 import { RootState } from "../../app/store";
 import { useNavigate } from "react-router-dom";
@@ -28,11 +28,11 @@ const Gifts: FunctionComponent<SendProps> = (props: SendProps) => {
     dispatch(requestGetGiftName(searchKey));
   };
   const onClickImg = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
-    dispatch(load2(Number.parseInt(e.currentTarget.id)));
+    dispatch(getGift(Number.parseInt(e.currentTarget.id)));
 
     dispatch(updateView(Number.parseInt(e.currentTarget.id)));
 
-    // dispatch(load3(myId));
+    // dispatch(getReceivers(myId));
 
     navigate("/detailGift");
   };

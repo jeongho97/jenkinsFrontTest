@@ -7,13 +7,13 @@ import {
   selectGiftByKey,
   insertGift,
   insertGiftFail,
-  load2,
-  load3,
+  getGift,
+  getReceivers,
   requestGetGiftName,
   requestSort,
-  updateView,
   postEmailFail,
   postEmail,
+  updateView,
   gift,
 } from "./gifts";
 
@@ -108,18 +108,20 @@ function* postGift(data: { payload: any }) {
   try {
     console.log("postGift, data:", data);
     console.log("postGift, data.payload", data.payload);
-    yield call(defaultAxios, "/gift", "post", data.payload);
+    yield call(defaultAxios, "/paper", "post", data.payload);
+    yield call(defaultAxios, `/gift/count/${data.payload.giftId}`, "put", undefined);
     alert("선물을 보냈습니다");
   } catch (error: any) {
     yield put(insertGiftFail(error));
     console.error(error);
   }
 }
+
 function* handleGiftsView(data: { payload: any }) {
   try {
     const id = data.payload;
     console.log("view id:", id);
-    yield call(defaultAxios, `/gift/${id}`, "put", undefined);
+    yield call(defaultAxios, `/gift/view/${id}`, "put", undefined);
   } catch (error) {
     console.log(error);
   }
@@ -140,8 +142,8 @@ function* sendEmail(data: { payload: any }) {
 export function* watchGetGifts() {
   yield takeLatest(requestGetGiftName, handleSearchGifts);
   yield takeLatest(requestSort, handleSortGift);
-  yield takeLatest(load2, handleSelectGiftByKey);
-  // yield takeLatest(load3, handleSelectReceivers);
+  yield takeLatest(getGift, handleSelectGiftByKey);
+  // yield takeLatest(getReceivers, handleSelectReceivers);
   yield takeLatest(insertGift, postGift);
   yield takeLatest(updateView, handleGiftsView);
   yield takeLatest(postEmail, sendEmail);
