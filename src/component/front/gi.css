@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "CookieRun-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  background-color: rosybrown;
+  color: black;
+}
+
+.img2 {
+  width: 200px;
+  height: 200px;
+  padding: 30px;
+}
+
+.hometext {
+  background-color: beige;
+  text-align: left;
+  font-size: 32px;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+  font-family: "CookieRun-Regular";
+  background: beige;
+  font-size: x-large;
+}
+
+.Appblock {
+  display: block;
+  text-align: left;
+  background-color: white;
+}
+
+.Appblock2 {
+  display: block;
+  text-align: center;
+  background-color: white;
+}
+
+.Appblock2 {
+  display: block;
+  text-align: center;
+  background-color: white;
+}
+
+.Appbinlock {
+  display: block;
+}
+
+.lobutton {
+  background-color: bisque;
+  font-family: "CookieRun-Regular";
+  font-size: x-large;
+}
+
+.lobuttoff {
+  background-color: white;
+  font-family: "KOTRA_GOTHIC";
+  font-size: x-large;
+  width: 250px;
+  height: 50px;
+}
+
+.startbutton {
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  font-family: "KOTRA_GOTHIC";
+  font-size: x-large;
+  width: 250px;
+  height: 50px;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  display: block;
+}
+
+.input1 {
+  height: 200px;
+}
+
+.logindiv {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.one {
+  width: 20em;
+  height: 20em;
+  align-items: center;
+  text-align: center;
+}
+
+.imga {
+  width: 10em;
+  height: 8em;
+  padding: 1em;
+  align-items: center;
+  text-align: center;
+}
+
+.two {
+  width: 60em;
+  height: 20em;
+  align-items: center;
+  text-align: center;
+}
+
+.hh {
+  text-align: left;
+  font-size: 15px;
+}
+.img-thumbnail col{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.box{
+    height: 100%;
+    width: 100%;
+}
+.h5{
+    text-align:center;
+}
