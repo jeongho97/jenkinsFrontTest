@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { IMG_PATH } from "../../app/AxiosApi";
+import { IMG_PATH2 } from "../../app/AxiosApi";
 import { getGift, getReceivers ,updateView } from "../../app/gifts";
 import { requestGetGiftName, requestSort } from "../../app/gifts";
 import { RootState } from "../../app/store";
@@ -75,7 +75,7 @@ const Gifts: FunctionComponent<SendProps> = (props: SendProps) => {
               <img
                 className="img-thumbnail col"
                 key={gift.id}
-                src={`${IMG_PATH}${gift.img}`}
+                src={`${IMG_PATH2}${gift.img}`}
                 alt={gift.name}
                 id={gift.id.toString()}
                 
