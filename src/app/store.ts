@@ -12,20 +12,22 @@ import { watchGetUser } from "./userSaga";
 import { watchGetAPI } from "./AuthSaga";
 import apiReducer from "./Auths";
 import { watchGetBoards } from "./boardSaga";
+import commentReducer from "./comment";
+import { watchGetComment } from "./commentSaga";
 
 const reducer = combineReducers({
     user: userReducer,
     // page: pageReducer,
     paper: paperReducer,
     api: apiReducer,
+    comment: commentReducer,
     gifts,
-    boards
-    
+    boards,
 });
 const sagaMiddleware = createSagaMiddleware();
 const defaultMiddleware = getDefaultMiddleware();
 function* rootSaga() {
-    yield all([watchGetPaper(), watchGetGifts(), watchGetUser(), watchGetAPI(),watchGetBoards()]);
+    yield all([watchGetPaper(), watchGetGifts(), watchGetUser(), watchGetAPI(), watchGetBoards(), watchGetComment()]);
 }
 // export const store = configureStore({
 //   reducer,
