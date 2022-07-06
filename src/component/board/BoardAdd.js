@@ -9,7 +9,7 @@ const BoardAdd = ({ isOpen, modalClose }) => {
   console.log("BoardAdd", modalClose);
   const [form, setForm] = useState({
     content: "",
-    img: "",
+    img: "img/gallery.jpg",
     file: "",
   });
   const dispatch = useDispatch();
@@ -58,9 +58,9 @@ const ProfileUpdateHeader = ({ modalClose, onSubmit }) => {
       <button outline color="secondary" onClick={modalClose}>
         취소
       </button>
-      <b>프로필 수정</b>
+      <b>게시판 작성</b>
       <button outline color="primary" onClick={onSubmit}>
-        수정
+        등록
       </button>
     </div>
   );
@@ -80,15 +80,19 @@ const ProfileUpdateBody = ({ onChangeFile, onChangeName, form }) => {
 
         <label htmlFor="imgUpload">
           <BsCameraFill></BsCameraFill>
-          <img className="profileImg" src={form.img} alt="myProfileImg"></img>
+          사진첩
         </label>
       </div>
-      <div>
-        <input
+      <img className="profileImg" src={form.img}></img>
+      <div className="writer">
+        <textarea
+          cols="100"
+          rows="10"
           type="content"
           value={form.content}
+          placeholder="내용을 입력하세요"
           onChange={(e) => onChangeName(e)}
-        ></input>
+        ></textarea>
       </div>
     </div>
   );
