@@ -7,6 +7,7 @@ import { gift } from "../../app/gifts";
 import "../front/gi.css";
 import { ModalHeader, ModalBody, Modal, Card, CardImg, CardTitle, CardSubtitle } from "reactstrap";
 import ProfileNav from "../ProfileNav";
+import { IMG_PATH2 } from "../../app/AxiosApi";
 interface IProps {
   setIsSelect: Dispatch<SetStateAction<boolean>>;
 }
@@ -52,7 +53,7 @@ const PaperDetail: FunctionComponent<IProps> = (props: IProps) => {
               <ModalHeader toggle={closeModal}>선물확인</ModalHeader>
               <ModalBody>
                 <Card>
-                  <CardImg className="detailGiftImg w-50 h-50" src={gift.img} alt={gift.name} />
+                  <CardImg className="detailGiftImg w-50 h-50" src={`${IMG_PATH2}${gift.img}`} alt={gift.name} />
                   <CardTitle tag="h5">{gift.name}</CardTitle>
                   <CardSubtitle className="mb-2 text-muted">{gift.content}</CardSubtitle>
                 </Card>
