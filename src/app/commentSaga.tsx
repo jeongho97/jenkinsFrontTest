@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 
-import { getUsers, loadaddcomment, loadcomment } from "./comment";
+import { getUsers, loadaddcomment, loadaddlove, loadcomment } from "./comment";
 import { defaultAxios } from "./AxiosApi";
 import { AxiosResponse } from "axios";
 
@@ -25,7 +25,17 @@ function* addcomment(data: any) {
     }
 }
 
+function* addlove(data: any) {
+    try {
+        const response: AxiosResponse<any, any> = yield call(defaultAxios, "comment/love", "post", data.payload);
+        console.log(response);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export function* watchGetComment() {
     yield takeLatest(loadaddcomment, addcomment);
     yield takeLatest(loadcomment, getComment);
+    yield takeLatest(loadaddlove, addlove);
 }

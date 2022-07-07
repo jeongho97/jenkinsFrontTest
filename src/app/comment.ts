@@ -41,8 +41,11 @@ const commentSlice = createSlice({
         inputBoardId: (state: userState, action: PayloadAction<Number>) => {
             state.BoardNum = action.payload;
         },
+        loadaddlove: (state: userState, action: PayloadAction<Object>) => {
+            console.log(action);
+        },
     },
     extraReducers: {},
 });
-export const { loadaddcomment, getUsers, loadcomment, inputBoardId } = commentSlice.actions;
+export const { loadaddcomment, getUsers, loadcomment, inputBoardId, loadaddlove } = commentSlice.actions;
 export default commentSlice.reducer;
