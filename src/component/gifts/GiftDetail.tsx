@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { insertGift, postEmail } from "../../app/gifts";
-import { IMG_PATH } from "../../app/AxiosApi";
+import { IMG_PATH2 } from "../../app/AxiosApi";
 import { Form, Input, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../../app/store";
@@ -68,8 +68,11 @@ const GiftDetail = () => {
           <h1>선물 상세 페이지</h1>
         </div>
         <div className="detailGiftDesc">
-          <img className="detailGiftImg" key={detailGift.gift?.id} src={`${IMG_PATH}${detailGift.gift?.img}`} alt={detailGift.gift?.name}></img>
+          <br />
+          <img className="detailGiftImg" key={detailGift.gift?.id} src={`${IMG_PATH2}${detailGift.gift?.img}`} alt={detailGift.gift?.name}></img>
+          <br /><br />
           {detailGift.gift?.content}
+          <br /><br />
         </div>
         <Form>
           닉네임 <Input type="text" name="nickname" id="nickname" onChange={(e) => onChangeNickName(e)}></Input>

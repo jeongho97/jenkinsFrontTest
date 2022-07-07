@@ -12,6 +12,7 @@ function* getUser() {
     console.error(error);
   }
 }
+
 function* postUser(data: any) {
   try {
     console.log(data);
@@ -52,7 +53,8 @@ function* LoginCheck(data: any) {
     yield put(login(false));
     console.error(error);
   }
-}
+} 
+
 function* handleCheckLogin() {
   try {
     const myToken = localStorage.getItem("loginUser");
@@ -65,6 +67,7 @@ function* handleCheckLogin() {
     yield put(login(false));
   }
 }
+
 export function* watchGetUser() {
   yield takeLatest(load7, LoginCheck);
   yield takeLatest(login, getUser);
