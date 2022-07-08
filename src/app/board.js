@@ -49,7 +49,7 @@ const boards = (state = initialState, action) => {
     }
     case SELECT_ALL_BOARDS: {
       console.log("reducer / 사진 가져오기 완료");
-      // console.log("reducer / ", action.payload);
+      console.log("reducer / ", action.payload);
       return {
         ...state,
         allBoards: action.payload,
@@ -59,8 +59,10 @@ const boards = (state = initialState, action) => {
     }
     case INSERT_BOARD: {
       console.log("reducer / 사진 업로드 완료");
+      console.log(action.payload);
       return {
         ...state,
+        allBoards: action.payload,
         boardsLoading: false,
         boardsDone: true,
       };
@@ -80,3 +82,5 @@ const boards = (state = initialState, action) => {
   }
 };
 export default boards;
+
+//allboard: {...allboard, data}
