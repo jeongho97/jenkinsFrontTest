@@ -31,10 +31,25 @@
   height: 100%;
   object-fit: contain;
   display: block; margin: 0px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .box5 {
 	height: 300px;
 	width: 300px;
   object-fit: contain;
   display: block; margin: 0px auto;
+}
+.profileImg3 {
+  width: 25%;
+  height: 25%;
+  border-radius: 4em;
+}
+.profilerow{
+  float:left;
+  width: 150px;
+}
+.profilerow2{
+  float:left;
+  width:75px;
 }
