@@ -185,6 +185,10 @@ h3 {
     margin-bottom: 1cm;
 }
 
+.trable {
+    display: block;
+}
+
 .leftbox {
     font-size: 15px;
 }

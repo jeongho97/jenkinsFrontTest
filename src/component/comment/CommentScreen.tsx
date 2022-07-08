@@ -77,7 +77,7 @@ const CommentScreen = () => {
         dispatch(
             loadaddcomment({
                 userId: username.name,
-                boardId: BoardId,
+                boardId: BoardId.id,
                 img: "asdkosad",
                 comment: comment,
                 ref2: detailcomment ? detailcomment.length : 0,
@@ -91,7 +91,7 @@ const CommentScreen = () => {
         dispatch(
             loadaddcomment({
                 userId: username.name,
-                boardId: BoardId,
+                boardId: BoardId.id,
                 img: "asdkosad",
                 comment: child,
                 ref2: item.ref2,
