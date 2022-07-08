@@ -19,9 +19,17 @@ const Board = () => {
       <div className="box5">
         {Boards?.map((board, index) => (
           <figure key={index}>
-            <figcaption className="figure-caption text-right">
-              작성자:{board.userName}
-            </figcaption>
+            <div className="test">
+              <div className="profilerow">
+                <img className="profileImg3" src={`${board.userImg}`}></img>
+              </div>
+              <div className="profilerow2">
+                <figcaption className="figure-caption text-right">
+                  {board.userName}
+                </figcaption>
+              </div>
+            </div>
+            <br></br>
             <img
               className="profileImg2"
               key={board.id}
