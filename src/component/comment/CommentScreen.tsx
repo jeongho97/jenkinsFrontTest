@@ -12,7 +12,8 @@ const CommentScreen = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const BoardId: Number = useSelector((state: any) => state.comment.BoardNum);
+    const BoardId = useSelector((state: any) => state.comment.BoardNum);
+
     const detailcomment: any = useSelector((state: any) => state.comment.comment);
     const [comment, setcomment] = useState("");
     const [child, setChild] = useState("");
@@ -25,7 +26,7 @@ const CommentScreen = () => {
     useEffect(() => {
         dispatch(
             loadcomment({
-                id: BoardId,
+                id: BoardId.id,
             })
         );
     }, [load, love]);
@@ -113,8 +114,10 @@ const CommentScreen = () => {
                         이전으로
                     </button>
 
-                    <div className="Maincon2">
-                        <text>하이</text>
+                    <div className="Maincon7">
+                        <img src={BoardId.img} className="img5"></img>
+                        <text>{BoardId.content}</text>
+                        <text className="rightf2">{moment(BoardId.date).format("MM월DD일")} </text>
                     </div>
 
                     {detailcomment?.map((item: any, index: any) => (

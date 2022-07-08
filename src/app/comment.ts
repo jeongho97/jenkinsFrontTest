@@ -16,13 +16,13 @@ export type userState = {
     comment?: Array<comment>;
     isLogin: boolean;
     check: number;
-    BoardNum: Number;
+    BoardNum: Array<any>;
 };
 const initialState: userState = {
     comment: undefined,
     isLogin: false,
     check: 0,
-    BoardNum: 0,
+    BoardNum: undefined,
 };
 
 const commentSlice = createSlice({
@@ -38,7 +38,7 @@ const commentSlice = createSlice({
         loadcomment: (state: userState, action: PayloadAction<Object>) => {
             console.log(action);
         },
-        inputBoardId: (state: userState, action: PayloadAction<Number>) => {
+        inputBoardId: (state: userState, action: PayloadAction<Array<any>>) => {
             state.BoardNum = action.payload;
         },
         loadaddlove: (state: userState, action: PayloadAction<Object>) => {
