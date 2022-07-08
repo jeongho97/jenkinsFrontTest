@@ -19,7 +19,7 @@ const UserList = () => {
     //console.log(myId, selectedUser.id);
     if (paper.selectedUser !== undefined) {
       //console.log(paper.selectedUser.id, user);
-      if (paper.selectedUser?.id === user.me.id) {
+      if (paper.selectedUser?.id === user.me?.id) {
         navigate("/paper");
       } else {
         navigate("/add");

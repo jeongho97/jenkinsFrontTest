@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
+import "./BoardMain.css";
 const BoardMain = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const BoardMain = () => {
     <div className="box6">
       <div className="profileUpdateHeader">
         <button
+          className="btn"
           onClick={() => {
             navigate("/profile");
           }}

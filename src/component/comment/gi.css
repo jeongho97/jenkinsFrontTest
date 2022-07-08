@@ -1,321 +1,323 @@
 @font-face {
-    font-family: "CookieRun-Regular";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "CookieRun-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "GmarketSansLight";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "LeferiPoint-WhiteObliqueA";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
+  font-family: "LeferiPoint-WhiteObliqueA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: beige;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background: beige; */
 }
-
+body {
+  background-color: beige;
+}
 .lowfont {
-    font-size: 14px;
-    font-family: "GmarketSansLight";
+  font-size: 14px;
+  font-family: "GmarketSansLight";
 }
 
 .lowfont2 {
-    margin-left: 15px;
-    font-size: 14px;
-    font-family: "GmarketSansLight";
+  margin-left: 15px;
+  font-size: 14px;
+  font-family: "GmarketSansLight";
 }
 
 h1 {
-    font-size: 60px;
+  font-size: 60px;
 }
 
 h2 {
-    margin-top: 20px;
-    font-size: 40px;
-    margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
 h3 {
-    background-color: rosybrown;
-    color: black;
+  background-color: rosybrown;
+  color: black;
 }
 
 .img2 {
-    width: 200px;
-    height: 200px;
-    padding: 30px;
+  width: 200px;
+  height: 200px;
+  padding: 30px;
 }
 
 .img3 {
-    margin-left: 10px;
-    margin-top: 8px;
-    margin-bottom: 3px;
+  margin-left: 10px;
+  margin-top: 8px;
+  margin-bottom: 3px;
 
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .img4 {
-    margin-left: 15px;
-    margin-top: 8px;
-    margin-bottom: 3px;
+  margin-left: 15px;
+  margin-top: 8px;
+  margin-bottom: 3px;
 
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }
 
 .img5 {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .rightfl {
-    float: right;
+  float: right;
 }
 
 .rightf2 {
-    margin-left: 100px;
+  margin-left: 100px;
 }
 
 .rightbox {
-    width: 100%;
+  width: 100%;
 }
 
 .hometext {
-    background-color: beige;
-    text-align: left;
-    font-size: 32px;
+  background-color: beige;
+  text-align: left;
+  font-size: 32px;
 }
 
 .App {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    font-family: "CookieRun-Regular";
-    background: beige;
-    font-size: x-large;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  font-family: "CookieRun-Regular";
+  background: beige;
+  font-size: x-large;
 }
 
 .App2 {
-    padding-top: 50px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    font-family: "CookieRun-Regular";
-    background: beige;
-    font-size: x-large;
+  padding-top: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  font-family: "CookieRun-Regular";
+  background: beige;
+  font-size: x-large;
 }
 
 .Maincon {
-    justify-content: left;
-    text-align: left;
-    width: 20cm;
+  justify-content: left;
+  text-align: left;
+  width: 20cm;
 
-    font-family: "CookieRun-Regular";
-    display: flex;
+  font-family: "CookieRun-Regular";
+  display: flex;
 }
 
 .Maincon2 {
-    justify-content: left;
-    text-align: left;
-    width: 20cm;
-    background-color: beige;
-    font-family: "CookieRun-Regular";
-    display: flex;
+  justify-content: left;
+  text-align: left;
+  width: 20cm;
+  background-color: beige;
+  font-family: "CookieRun-Regular";
+  display: flex;
 }
 
 .Maincon3 {
-    margin-top: 15px;
+  margin-top: 15px;
 
-    justify-content: left;
-    text-align: left;
-    width: 80%;
-    background-color: beige;
-    font-family: "CookieRun-Regular";
-    display: flex;
+  justify-content: left;
+  text-align: left;
+  width: 80%;
+  background-color: beige;
+  font-family: "CookieRun-Regular";
+  display: flex;
 }
 
 .Maincon4 {
-    margin-top: 15px;
-    width: 10%;
-    background-color: beige;
-    font-family: "CookieRun-Regular";
+  margin-top: 15px;
+  width: 10%;
+  background-color: beige;
+  font-family: "CookieRun-Regular";
 }
 
 .Maincon5 {
-    width: 10cm;
-    height: 0.7cm;
-    background-color: beige;
-    font-family: "CookieRun-Regular";
-    font-size: 12px;
+  width: 10cm;
+  height: 0.7cm;
+  background-color: beige;
+  font-family: "CookieRun-Regular";
+  font-size: 12px;
 }
 
 .Maincon6 {
-    width: 2cm;
-    height: 0.7cm;
-    background-color: beige;
-    font-family: "CookieRun-Regular";
-    font-size: 12px;
+  width: 2cm;
+  height: 0.7cm;
+  background-color: beige;
+  font-family: "CookieRun-Regular";
+  font-size: 12px;
 }
 
 .Maincon7 {
-    justify-content: left;
-    text-align: left;
-    width: 18cm;
-    border: 1px solid black;
-    background-color: beige;
-    font-family: "CookieRun-Regular";
-    display: flex;
-    margin-top: 1cm;
-    margin-bottom: 1cm;
+  justify-content: left;
+  text-align: left;
+  width: 18cm;
+  border: 1px solid black;
+  background-color: beige;
+  font-family: "CookieRun-Regular";
+  display: flex;
+  margin-top: 1cm;
+  margin-bottom: 1cm;
 }
 
 .trable {
-    display: block;
+  display: block;
 }
 
 .leftbox {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .leftbox2 {
-    margin-left: 30px;
-    font-size: 15px;
+  margin-left: 30px;
+  font-size: 15px;
 }
 .rightbox {
-    margin-left: 10cm;
+  margin-left: 10cm;
 }
 
 .box2 {
-    margin-left: 10px;
-    height: 40%;
+  margin-left: 10px;
+  height: 40%;
 }
 .box4 {
-    margin-left: 10px;
-    height: 10px;
-    display: flex;
+  margin-left: 10px;
+  height: 10px;
+  display: flex;
 }
 
 .box3 {
-    display: block;
-    width: 50%;
-    margin-left: 10px;
+  display: block;
+  width: 50%;
+  margin-left: 10px;
 }
 
 .Appblock {
-    display: block;
-    text-align: left;
-    background-color: white;
+  display: block;
+  text-align: left;
+  background-color: white;
 }
 
 .Appblock2 {
-    display: block;
-    text-align: center;
-    background-color: white;
+  display: block;
+  text-align: center;
+  background-color: white;
 }
 
 .Appblock2 {
-    display: block;
-    text-align: center;
-    background-color: white;
+  display: block;
+  text-align: center;
+  background-color: white;
 }
 
 .Appbinlock {
-    display: block;
+  display: block;
 }
 
 .lobutton {
-    background-color: bisque;
-    font-family: "CookieRun-Regular";
-    font-size: x-large;
+  background-color: bisque;
+  font-family: "CookieRun-Regular";
+  font-size: x-large;
 }
 
 .lobuttoff {
-    background-color: white;
-    font-family: "KOTRA_GOTHIC";
-    font-size: x-large;
-    width: 250px;
-    height: 50px;
+  background-color: white;
+  font-family: "KOTRA_GOTHIC";
+  font-size: x-large;
+  width: 250px;
+  height: 50px;
 }
 
 .startbutton {
-    margin-top: 20px;
-    background-color: black;
-    color: white;
-    font-family: "KOTRA_GOTHIC";
-    font-size: x-large;
-    width: 250px;
-    height: 50px;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  font-family: "KOTRA_GOTHIC";
+  font-size: x-large;
+  width: 250px;
+  height: 50px;
 }
 
 input {
-    width: 100%;
-    height: 50px;
-    display: block;
+  width: 100%;
+  height: 50px;
+  display: block;
 }
 
 .input1 {
-    height: 200px;
+  height: 200px;
 }
 
 .logindiv {
-    align-items: center;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .one {
-    width: 20em;
-    height: 20em;
-    align-items: center;
-    text-align: center;
+  width: 20em;
+  height: 20em;
+  align-items: center;
+  text-align: center;
 }
 
 .imga {
-    width: 10em;
-    height: 8em;
-    padding: 1em;
-    align-items: center;
-    text-align: center;
+  width: 10em;
+  height: 8em;
+  padding: 1em;
+  align-items: center;
+  text-align: center;
 }
 
 .two {
-    width: 60em;
-    height: 20em;
-    align-items: center;
-    text-align: center;
+  width: 60em;
+  height: 20em;
+  align-items: center;
+  text-align: center;
 }
 
 .hh {
-    text-align: left;
-    font-size: 15px;
+  text-align: left;
+  font-size: 15px;
 }
 .img-thumbnail col {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 .box {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 .h5 {
-    text-align: center;
+  text-align: center;
 }

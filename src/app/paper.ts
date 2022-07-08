@@ -51,6 +51,12 @@ const paperSlice = createSlice({
       console.log(action.payload);
       state.selectedUser = undefined;
     },
+    delayAddPaper: (state: paperState, action: PayloadAction<Object>) => {
+      //   state.paperdata = action.payload;
+      // console.log(action.payload);
+      console.log("쪽지 지연발송 시작");
+      state.selectedUser = undefined;
+    },
     getPapersFail: (state: paperState, action: PayloadAction<Error>) => {
       state.isLoading = false;
       state.error = action.payload;
@@ -66,5 +72,6 @@ const paperSlice = createSlice({
     },
   },
 });
-export const { select, selectPaper, getPapers, getPapersFail, load, load2, getGiftFromId, getGiftByIdFails, requestGetGift } = paperSlice.actions;
+export const { select, selectPaper, getPapers, getPapersFail, load, load2, delayAddPaper, getGiftFromId, getGiftByIdFails, requestGetGift } =
+  paperSlice.actions;
 export default paperSlice.reducer;

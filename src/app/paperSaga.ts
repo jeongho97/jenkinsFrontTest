@@ -1,5 +1,5 @@
 import { call, put, select, takeLatest } from "redux-saga/effects";
-import { selectPaper, getPapers, getPapersFail, load, load2, requestGetGift, getGiftByIdFails, getGiftFromId } from "./paper";
+import { selectPaper, getPapers, getPapersFail, load, load2, requestGetGift, getGiftByIdFails, getGiftFromId, delayAddPaper } from "./paper";
 import { defaultAxios } from "./AxiosApi";
 import { AxiosResponse } from "axios";
 
@@ -12,6 +12,15 @@ function* postPaper(data: any) {
   } catch (error: any) {
     yield put(getPapersFail(error));
     console.error(error);
+  }
+}
+function* delayPostPaper(data: any) {
+  try {
+    yield call(defaultAxios, "/paper/delay", "post", data.payload);
+    alert("지연작성이 완료되었습니다");
+  } catch (error: any) {
+    yield put(getPapersFail(error));
+    console.log(error);
   }
 }
 
@@ -55,4 +64,5 @@ export function* watchGetPaper() {
   yield takeLatest(load2, postPaper);
   yield takeLatest(load, handleGetPaperById);
   yield takeLatest(requestGetGift, handleGetGiftFromId);
+  yield takeLatest(delayAddPaper, delayPostPaper);
 }
