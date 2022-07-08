@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Button, Input, InputGroup, InputGroupText, Modal } from "reactstrap";
-import { insertBoard } from "../../app/board";
+import {
+  Alert,
+  Button,
+  Input,
+  InputGroup,
+  InputGroupText,
+  Modal,
+} from "reactstrap";
+import { insertBoard, selectAllBoards } from "../../app/board";
 import { BsCameraFill } from "react-icons/bs";
 import "./BoardAdd.css";
+import { useNavigate } from "react-router-dom";
+import BoardMain from "./BoardMain";
+import Board from "./Board";
 
 const BoardAdd = ({ isOpen, modalClose }) => {
   console.log("BoardAdd", modalClose);
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     content: "",
     img: "img/gallery.jpg",
@@ -33,7 +44,10 @@ const BoardAdd = ({ isOpen, modalClose }) => {
   const onSubmit = () => {
     console.log(form);
     dispatch(insertBoard(form));
+    alert("글 작성 완료");
+    navigate("/boardMain");
     modalClose();
+    window.location.reload();
   };
   return (
     <Modal fullscreen isOpen={isOpen}>

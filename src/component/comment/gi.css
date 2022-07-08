@@ -208,13 +208,6 @@ h3 {
 .Appbinlock {
     display: block;
 }
-
-label {
-    position: absolute;
-    left: 10px;
-    top: 0;
-}
-
 .lobutton {
     background-color: bisque;
     font-family: "CookieRun-Regular";

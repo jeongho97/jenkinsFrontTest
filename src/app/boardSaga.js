@@ -1,4 +1,12 @@
-import { all, call, fork, put, take, takeLatest } from "redux-saga/effects";
+import {
+  all,
+  call,
+  fork,
+  put,
+  select,
+  take,
+  takeLatest,
+} from "redux-saga/effects";
 import {
   SELECT_ALL_BOARDS,
   BOARDS_REQUEST,
@@ -10,6 +18,9 @@ import { AuthAxios, defaultAxios, fileAxios } from "./AxiosApi";
 
 function* handleInsertBoards(action) {
   try {
+    const Boards = yield select((state) => state.boards.allBoards);
+    const userName = yield select((state) => state.users);
+    console.log("username : ", userName);
     console.log("handleInsertBoards start");
     let filePath = "";
     console.log(action.data);
@@ -25,10 +36,16 @@ function* handleInsertBoards(action) {
       img: filePath ? filePath : "/img/" + file.name,
       userId: null,
     };
-    console.log("post입니다!!!: ", post);
+    //console.log("기존 boards: ", Boards);
+    // let newBoards = Boards.data.slice();
+    // let newBoards.concat(post);
+    //console.log("붙일거야 :", Boards.concat(post));
+    //console.log("post입니다!!!: ", post);
+    console.log("newBoards: ", Boards);
     yield call(AuthAxios, "/board/", "post", post);
     yield put({
       type: INSERT_BOARD,
+      payload: Boards.concat(post),
     }); //put은 특정 액션을 dispatch한다
   } catch (error) {
     yield put({
