@@ -16,18 +16,18 @@ import commentReducer from "./comment";
 import { watchGetComment } from "./commentSaga";
 
 const reducer = combineReducers({
-    user: userReducer,
-    // page: pageReducer,
-    paper: paperReducer,
-    api: apiReducer,
-    comment: commentReducer,
-    gifts,
-    boards,
+  user: userReducer,
+  // page: pageReducer,
+  paper: paperReducer,
+  api: apiReducer,
+  comment: commentReducer,
+  gifts,
+  boards,
 });
 const sagaMiddleware = createSagaMiddleware();
 const defaultMiddleware = getDefaultMiddleware();
 function* rootSaga() {
-    yield all([watchGetPaper(), watchGetGifts(), watchGetUser(), watchGetAPI(), watchGetBoards(), watchGetComment()]);
+  yield all([watchGetPaper(), watchGetGifts(), watchGetUser(), watchGetAPI(), watchGetBoards(), watchGetComment()]);
 }
 // export const store = configureStore({
 //   reducer,
@@ -35,15 +35,15 @@ function* rootSaga() {
 //   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware()],
 // });
 const createStore = () => {
-    const store = configureStore({
-        reducer,
-        devTools: true,
-        middleware: [...defaultMiddleware, sagaMiddleware],
-    });
+  const store = configureStore({
+    reducer,
+    devTools: true,
+    middleware: [...defaultMiddleware, sagaMiddleware],
+  });
 
-    sagaMiddleware.run(rootSaga);
+  sagaMiddleware.run(rootSaga);
 
-    return store;
+  return store;
 };
 export default createStore;
 export type RootState = ReturnType<typeof reducer>;

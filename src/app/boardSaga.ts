@@ -1,25 +1,12 @@
-import {
-  all,
-  call,
-  fork,
-  put,
-  select,
-  take,
-  takeLatest,
-} from "redux-saga/effects";
-import {
-  SELECT_ALL_BOARDS,
-  BOARDS_REQUEST,
-  FAILED_REQUEST,
-  INSERT_BOARD,
-  INSERT_REQUEST,
-} from "./board";
+import { AxiosResponse } from "axios";
+import { call, put, select, takeLatest } from "redux-saga/effects";
+import { SELECT_ALL_BOARDS, BOARDS_REQUEST, FAILED_REQUEST, INSERT_BOARD, INSERT_REQUEST, board } from "./board";
 import { AuthAxios, defaultAxios, fileAxios } from "./AxiosApi";
 
-function* handleInsertBoards(action) {
+function* handleInsertBoards(action: { data: { content: any; img: any; file: any } }) {
   try {
-    const Boards = yield select((state) => state.boards.allBoards);
-    const userName = yield select((state) => state.users);
+    const Boards: Array<board> = yield select((state: any) => state.boards.allBoards);
+    const userName: string = yield select((state) => state.users);
     console.log("username : ", userName);
     console.log("handleInsertBoards start");
     let filePath = "";
@@ -31,7 +18,7 @@ function* handleInsertBoards(action) {
     if (file) {
       yield call(fileAxios, "/upload", "post", uploadFile);
     }
-    const post = {
+    const post: any = {
       content,
       img: filePath ? filePath : "/img/" + file.name,
       userId: null,
@@ -57,7 +44,7 @@ function* handleInsertBoards(action) {
 function* handleSelectAllBoards() {
   try {
     console.log("handleSelectAllBoards start");
-    const allBoards = yield call(defaultAxios, "/board/", "get");
+    const allBoards: AxiosResponse<any, any> = yield call(defaultAxios, "/board/", "get", null);
     // console.log(allBoards.data);
     yield put({
       type: SELECT_ALL_BOARDS,
@@ -73,6 +60,6 @@ function* handleSelectAllBoards() {
 
 export function* watchGetBoards() {
   console.log("saga / watchGetBoards");
-  yield takeLatest(INSERT_REQUEST, handleInsertBoards);
+  yield takeLatest<any, any>(INSERT_REQUEST, handleInsertBoards);
   yield takeLatest(BOARDS_REQUEST, handleSelectAllBoards);
 }

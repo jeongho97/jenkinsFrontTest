@@ -1,4 +1,19 @@
-const initialState = {
+export type board = {
+  id: number;
+  userId: number;
+  content: string;
+  img: string;
+  date: Date;
+  userName: string;
+  userImg: string;
+};
+export type boardState = {
+  allBoards: Array<board>;
+  boardsLoading: boolean;
+  boardsDone: false;
+  boardsError: Error;
+};
+const initialState: boardState = {
   allBoards: [],
   boardsLoading: false,
   boardsDone: false,
@@ -11,7 +26,7 @@ export const FAILED_REQUEST = "FAILED_REQUEST";
 export const INSERT_REQUEST = "INSERT_REQUEST";
 export const INSERT_BOARD = "INSERT_BOARD";
 
-export const insertBoard = (data) => {
+export const insertBoard = (data: { content: string; img: string; file: string }) => {
   console.log("action / insultBoards");
   return {
     type: INSERT_REQUEST,
@@ -26,7 +41,7 @@ export const selectAllBoards = () => {
   };
 };
 
-const boards = (state = initialState, action) => {
+const boards = (state = initialState, action: { type: any; payload: any; error: any }) => {
   switch (action.type) {
     case INSERT_REQUEST: {
       console.log("reducer / 사진 업로드 요청");
