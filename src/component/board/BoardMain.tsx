@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import BoardAdd from "./BoardAdd";
 
 import { selectAllBoards } from "../../app/board";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 
 import "./BoardMain.css";
 const BoardMain = () => {
@@ -18,6 +17,7 @@ const BoardMain = () => {
   };
   useEffect(() => {
     selectMy();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const modalClose = () => {
     setIsOpen(false);

@@ -1,20 +1,22 @@
+import { RootState } from "../../app/store";
 import { useSelector } from "react-redux";
 import { IMG_PATH } from "../../app/AxiosApi";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { selectAllBoards } from "../../app/board";
+import { board } from "../../app/board";
 import { inputBoardId, loadcomment } from "../../app/comment";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import React from "react";
 const Board = () => {
   const navigate = useNavigate();
-  const Boards = useSelector((state) => state.boards.allBoards);
+  const Boards: Array<board> = useSelector((state: any) => state.boards.allBoards);
   const dispatch = useDispatch();
-  const onClickImg = (e) => {
+  const onClickImg = (e: any[]) => {
     dispatch(inputBoardId(e));
     navigate("/commentmain");
   };
 
-  const onClickdetail = (e, index) => {
+  const onClickdetail = (e: any, index: number) => {
     dispatch(
       loadcomment({
         id: e,
@@ -24,9 +26,9 @@ const Board = () => {
     love[index] = detailcomment2;
   };
 
-  const [love, setlove] = useState("");
+  const [love, setlove] = useState<Array<any>>();
 
-  const detailcomment2 = useSelector((state) => state.comment.comment);
+  const detailcomment2 = useSelector((state: RootState) => state.comment.comment);
 
   useEffect(() => {
     setlove(Array(Boards?.length).fill(undefined));
@@ -38,7 +40,7 @@ const Board = () => {
   return (
     <div className="container">
       <div className="box5">
-        {Boards?.map((board, index) => {
+        {Boards?.map((board: any, index: number) => {
           return (
             <figure key={index}>
               <div className="test">
@@ -55,7 +57,7 @@ const Board = () => {
                 src={`${IMG_PATH}${board.img}`}
                 alt={board.content}
                 id={board.id}
-                content={board.content}
+                data-content={board.content}
                 onClick={() => onClickImg(board)}
               ></img>
 

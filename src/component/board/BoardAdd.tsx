@@ -1,34 +1,37 @@
-import { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Alert, Button, Input, InputGroup, InputGroupText, Modal } from "reactstrap";
-import { insertBoard, selectAllBoards } from "../../app/board";
+import { Modal } from "reactstrap";
+import { insertBoard } from "../../app/board";
 import { BsCameraFill } from "react-icons/bs";
 import "./BoardAdd.css";
 import { useNavigate } from "react-router-dom";
-import BoardMain from "./BoardMain";
-import Board from "./Board";
 
-const BoardAdd = ({ isOpen, modalClose }) => {
+type form = {
+  content: string;
+  img: any;
+  file: any;
+};
+const BoardAdd = ({ isOpen, modalClose }: { isOpen: any; modalClose: any }) => {
   console.log("BoardAdd", modalClose);
   const navigate = useNavigate();
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<form>({
     content: "",
     img: "img/gallery.jpg",
     file: "",
   });
   const dispatch = useDispatch();
-  const onChangeFile = (e) => {
+  const onChangeFile = (e: { target: { files: any[] } }) => {
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       reader.onload = () => {
         setForm({ ...form, img: reader.result, file });
         resolve();
       };
     });
   };
-  const onChangeName = (e) => {
+  const onChangeName = (e: { target: { value: any } }) => {
     const { value } = e.target;
     setForm({ ...form, content: value });
   };
@@ -52,21 +55,21 @@ const BoardAdd = ({ isOpen, modalClose }) => {
 };
 export default BoardAdd;
 
-const ProfileUpdateHeader = ({ modalClose, onSubmit }) => {
+const ProfileUpdateHeader = ({ modalClose, onSubmit }: { modalClose: any; onSubmit: any }) => {
   return (
     <div className="profileUpdateHeader">
-      <button className="btn" outline color="secondary" onClick={modalClose}>
+      <button className="btn" color="secondary" onClick={modalClose}>
         취소
       </button>
       <b>게시판 작성</b>
-      <button className="btn" outline color="primary" onClick={onSubmit}>
+      <button className="btn" color="primary" onClick={onSubmit}>
         등록
       </button>
     </div>
   );
 };
 
-const ProfileUpdateBody = ({ onChangeFile, onChangeName, form }) => {
+const ProfileUpdateBody = ({ onChangeFile, onChangeName, form }: { onChangeFile: any; onChangeName: any; form: any }) => {
   return (
     <div>
       <div>
@@ -79,7 +82,7 @@ const ProfileUpdateBody = ({ onChangeFile, onChangeName, form }) => {
       </div>
       <img className="profileImg" src={form.img}></img>
       <div className="writer">
-        <textarea cols="100" rows="10" type="content" value={form.content} placeholder="내용을 입력하세요" onChange={(e) => onChangeName(e)}></textarea>
+        <textarea cols={100} rows={10} data-type="content" value={form.content} placeholder="내용을 입력하세요" onChange={(e) => onChangeName(e)}></textarea>
       </div>
     </div>
   );
