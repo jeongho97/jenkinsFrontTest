@@ -45,7 +45,7 @@ const Login: FunctionComponent<FrontProps> = (props: FrontProps) => {
                         로그인
                     </button>
                     <div className="form-text">
-                        <h2>아이디가 없으신가요? jenkins test2</h2>
+                        <h2>아이디가 없으신가요? jenkins test3</h2>
                         <button
                             className="btn lobutton"
                             type="button"
